@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HAM</title>
+    <style>
+          @font-face {
+            font-family: 'Minecraft';
+            src: url('Minecraft.ttf') format('truetype');
+        }
+        body {
+            background-image: url('pigbg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .logo {
+    margin-top: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 52%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    width: 80%;
+    height: auto;
+
+}
+
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            width: 520px;
+        }
+
+
+        .minecraft-button {
+            width: 520px;
+            height: 55px;
+            display: inline-block;
+            background-image: url('bgbtn.png');
+            image-rendering: pixelated;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 3px solid black;
+            color: #ffffff;
+            font-size: 24px;
+            letter-spacing: 2px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            margin: 10px;
+            font-family: 'Minecraft', sans-serif;
+            transition: filter 0.3s;
+            color: #DDD;
+    text-shadow: 2px 2px #000A;
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+    box-sizing: border-box;
+        }
+
+
+        .minecraft-button.small-button{
+            width: fit-content;
+            padding: 10px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .minecraft-button.small-button img{
+            width: 30px;
+            height: 30px;
+        }
+
+        .minecraft-button:hover {
+            background-image: url('bgbtnblue.png');
+            image-rendering: pixelated;
+            background-size: cover;
+            background-repeat: no-repeat;
+    color: #f9e380;
+}
+        .ham{
+            position: fixed;
+            padding: 20px;
+            width: 50px;
+        }
+        .footer {
+            position: fixed;
+            width: 100%;
+            bottom: 20px;
+            display: flex;
+            padding: 0 20px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .footer-text {
+            width: 99%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-text span {
+            margin-right: 10px;
+            color: #FFF;
+            font-size: 24px;
+            letter-spacing: 2px;
+            font-family: 'Minecraft', sans-serif;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .logo img {
+    width: 50%;
+    height: auto;
+}
+.minecraft-button,.button-row {
+    width: 270px;
+    height: 35px;
+    font-size: 12px;
+}
+.footer-text span{
+    font-size: 12px;
+    margin-right: 15px;
+
+}
+.minecraft-button.small-button{
+    padding: 5px;
+}
+
+.minecraft-button.small-button img {
+    width: 20px;
+    height: 20px;
+
+}
+.ham {
+    width: 24px;
+}
+        }
+        
+    </style>
+</head>
+<body>
+    <img src="pork.png" alt="" class="ham">
+    <div class="container">
+        <div class="logo">
+            <img src="logo (1).png" alt="Logo">
+        </div>
+
+        <button class="minecraft-button" style="margin-top: 80px;">Buy Now!</button>
+        <button class="minecraft-button">View Chart</button>
+
+        <div class="button-row">
+            <button class="minecraft-button small-button"><img src="send.png" alt=""></button>
+            <button class="minecraft-button big-button" onclick="playNextAudio()">Oink! (Click Me)</button>
+            <button class="minecraft-button small-button"><img src="twitter.png" alt=""></button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-text">
+            <span>Porkchop 1.16</span>
+            <span>Copyright to HAM PE. Do not Beef!</span>
+        </div>
+    </footer>
+</body>
+
+<script>
+        var audioFiles = ['FirstClick.mp3', 'SecondClick.mp3', 'ThirdClick.mp3', 'FourthClick.mp3'];
+        var currentAudioIndex = 0;
+
+        function playNextAudio() {
+            var audio = new Audio(audioFiles[currentAudioIndex]);
+            audio.play();
+            
+            currentAudioIndex++;
+            if (currentAudioIndex >= audioFiles.length) {
+                currentAudioIndex = 0;
+            }
+        }
+</script>
+</html>
