@@ -33,7 +33,7 @@
     text-align: center;
     position: absolute;
     top: 0;
-    left: 52%;
+    left: 53%;
     transform: translateX(-50%);
 }
 
@@ -42,6 +42,12 @@
     height: auto;
 
 }
+.buttons{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
 
 
         .button-row {
@@ -123,6 +129,9 @@
             letter-spacing: 2px;
             font-family: 'Minecraft', sans-serif;
         }
+        .logo.mobile{
+            display: none;
+        }
 
         @media only screen and (max-width: 900px) {
             .logo img {
@@ -151,6 +160,35 @@
 .ham {
     width: 24px;
 }
+
+        }
+        @media only screen and (max-width: 500px) {
+            .buttons{
+
+    margin-top: 30px;
+}
+            .logo.mobile{
+                display: block;
+                margin-top: 80px;
+    left: 50%;
+            }
+            .logo {
+    display: none;
+            }
+            .logo img {
+    width: 260px;
+    height: auto;
+}
+.footer-text {
+    flex-direction: column;
+}
+.footer-text span {
+    font-size: 10px;
+    margin-right: 15px;
+}
+.ham{
+    display: none;
+}
         }
         
     </style>
@@ -161,10 +199,13 @@
         <div class="logo">
             <img src="logo (1).png" alt="Logo">
         </div>
-
-        <button class="minecraft-button" style="margin-top: 80px;">Buy Now!</button>
+        <div class="logo mobile">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="buttons">
+        <button class="minecraft-button">Buy Now!</button>
         <button class="minecraft-button">View Chart</button>
-
+        </div>
         <div class="button-row">
             <button class="minecraft-button small-button"><img src="send.png" alt=""></button>
             <button class="minecraft-button big-button" onclick="playNextAudio()">Oink! (Click Me)</button>
